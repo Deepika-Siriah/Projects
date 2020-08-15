@@ -1,0 +1,110 @@
+   TrainROC TrainSens TrainSpec  method
+1 0.8412594 0.7622955 0.7649508 treebag
+
+
+Confusion Matrix and Statistics without adj
+
+          Reference
+Prediction Serious Slight
+   Serious    1917   3984
+   Slight     3792  33789
+                                          
+               Accuracy : 0.8212          
+                 95% CI : (0.8175, 0.8248)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1.00000         
+                                          
+                  Kappa : 0.2271          
+ Mcnemar's Test P-Value : 0.03031         
+                                          
+            Sensitivity : 0.33579         
+            Specificity : 0.89453         
+         Pos Pred Value : 0.32486         
+         Neg Pred Value : 0.89910         
+             Prevalence : 0.13130         
+         Detection Rate : 0.04409         
+   Detection Prevalence : 0.13571         
+      Balanced Accuracy : 0.61516         
+                                          
+       'Positive' Class : Serious      
+
+
+Confusion Matrix and Statistics
+
+          Reference
+Prediction Serious Slight
+   Serious    3819  13998
+   Slight     1890  23775
+                                          
+               Accuracy : 0.6346          
+                 95% CI : (0.6301, 0.6391)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.157           
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.66894         
+            Specificity : 0.62942         
+         Pos Pred Value : 0.21435         
+         Neg Pred Value : 0.92636         
+             Prevalence : 0.13130         
+         Detection Rate : 0.08783         
+   Detection Prevalence : 0.40976         
+      Balanced Accuracy : 0.64918         
+                                          
+       'Positive' Class : Serious         
+                                          
+> p.bag.newthresh <- factor(ifelse(p.bag.prob[[1]]>0.30, "Serious", "Slight"))
+> confusionMatrix(p.bag.newthresh, y.test)
+
+Confusion Matrix and Statistics with threshold adj 0.30
+
+          Reference
+Prediction Serious Slight
+   Serious    3471  11817
+   Slight     2238  25956
+                                          
+               Accuracy : 0.6768          
+                 95% CI : (0.6723, 0.6812)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1724          
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.60799         
+            Specificity : 0.68716         
+         Pos Pred Value : 0.22704         
+         Neg Pred Value : 0.92062         
+             Prevalence : 0.13130         
+         Detection Rate : 0.07983         
+   Detection Prevalence : 0.35159         
+      Balanced Accuracy : 0.64757         
+                                          
+       'Positive' Class : Serious 
+
+
+   TrainROC TrainSens TrainSpec  method
+1 0.8412594 0.7622955 0.7649508 treebag
+
+
+varImp(m.bag)
+treebag variable importance
+
+                                        Overall
+number_of_vehicles                      100.000
+speed_limit                              89.781
+age_of_driver                            69.626
+lsoa_of_accident_location                58.964
+vehicle_manoeuvre                        50.937
+vehicle_type                             37.253
+junction_location                        29.487
+junction_detail                          26.884
+pedestrian_crossing_physical_facilities  12.659
+weather_conditions                       11.519
+road_type                                10.277
+light_conditions                          7.692
+urban_or_rural_area                       4.044
+sex_of_driver                             3.414
+junction_control                          0.000

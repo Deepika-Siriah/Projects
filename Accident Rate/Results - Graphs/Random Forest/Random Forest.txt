@@ -1,0 +1,80 @@
+getTrainPerf(m.rf)
+   TrainROC TrainSens TrainSpec method
+1 0.8875582 0.7954179 0.8209439     rf
+
+
+rf variable importance
+
+                                         Overall
+number_of_vehicles                      100.0000
+speed_limit                              57.2077
+age_of_driver                            47.7647
+lsoa_of_accident_location                47.1810
+vehicle_manoeuvre                        40.2315
+vehicle_type                             32.7466
+junction_detail                          18.9141
+junction_location                        18.1077
+weather_conditions                       10.2311
+pedestrian_crossing_physical_facilities   8.8081
+road_type                                 6.7566
+light_conditions                          6.0491
+sex_of_driver                             1.0556
+urban_or_rural_area                       0.4584
+junction_control                          0.0000
+
+Confusion Matrix and Statistics without Threshold adj
+
+          Reference
+Prediction Serious Slight
+   Serious    2145   3919
+   Slight     3564  33854
+                                          
+               Accuracy : 0.8279          
+                 95% CI : (0.8243, 0.8314)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.265           
+ Mcnemar's Test P-Value : 4.272e-05       
+                                          
+            Sensitivity : 0.37572         
+            Specificity : 0.89625         
+         Pos Pred Value : 0.35373         
+         Neg Pred Value : 0.90475         
+             Prevalence : 0.13130         
+         Detection Rate : 0.04933         
+   Detection Prevalence : 0.13946         
+      Balanced Accuracy : 0.63599         
+                                          
+       'Positive' Class : Serious         
+       
+
+Confusion Matrix and Statistics with o.31
+
+          Reference
+Prediction Serious Slight
+   Serious    3766  11695
+   Slight     1943  26078
+                                         
+               Accuracy : 0.6864         
+                 95% CI : (0.682, 0.6907)
+    No Information Rate : 0.8687         
+    P-Value [Acc > NIR] : 1              
+                                         
+                  Kappa : 0.2029         
+ Mcnemar's Test P-Value : <2e-16         
+                                         
+            Sensitivity : 0.65966        
+            Specificity : 0.69039        
+         Pos Pred Value : 0.24358        
+         Neg Pred Value : 0.93066        
+             Prevalence : 0.13130        
+         Detection Rate : 0.08661        
+   Detection Prevalence : 0.35557        
+      Balanced Accuracy : 0.67502        
+                                         
+       'Positive' Class : Serious        
+                                         
+
+> 
+                          

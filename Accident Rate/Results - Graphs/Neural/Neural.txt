@@ -1,0 +1,61 @@
+getTrainPerf(nn)
+   TrainROC TrainSens TrainSpec method
+1 0.6683831 0.6244707 0.6235863   nnet
+
+
+nnet variable importance
+
+  only 20 most important variables shown (out of 24)
+
+                                                   Overall
+lsoa_of_accident_location.London                   100.000
+number_of_vehicles                                  73.047
+sex_of_driver                                       43.585
+lsoa_of_accident_location.South.East                28.767
+lsoa_of_accident_location.North.West                24.720
+urban_or_rural_area                                 18.483
+vehicle_manoeuvre                                   16.399
+lsoa_of_accident_location.South.West                14.556
+lsoa_of_accident_location.North.East                13.935
+lsoa_of_accident_location.East.of.England           11.034
+weather_conditions                                  10.770
+junction_control                                     9.019
+lsoa_of_accident_location.Yorkshire.and.The.Humber   8.518
+lsoa_of_accident_location.West.Midlands              7.789
+lsoa_of_accident_location.Others                     7.565
+light_conditions                                     7.337
+road_type                                            5.290
+vehicle_type                                         5.192
+junction_detail                                      4.680
+junction_location                                    3.736
+
+
+Confusion Matrix and Statistics
+
+          Reference
+Prediction Serious Slight
+   Serious    3396  15144
+   Slight     2313  22629
+                                          
+               Accuracy : 0.5985          
+                 95% CI : (0.5939, 0.6031)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.0993          
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.5949          
+            Specificity : 0.5991          
+         Pos Pred Value : 0.1832          
+         Neg Pred Value : 0.9073          
+             Prevalence : 0.1313          
+         Detection Rate : 0.0781          
+   Detection Prevalence : 0.4264          
+      Balanced Accuracy : 0.5970          
+                                          
+       'Positive' Class : Serious         
+                                          
+
+
+Area under the curve: 0.6392

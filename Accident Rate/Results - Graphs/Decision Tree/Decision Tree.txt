@@ -1,0 +1,98 @@
+getTrainPerf(m.rpart)
+   TrainROC TrainSens TrainSpec method
+1 0.6968757 0.6243134 0.7256206  rpart
+
+> varImp(m.rpart)
+rpart variable importance
+
+                                         Overall
+number_of_vehicles                      100.0000
+vehicle_type                             87.4934
+vehicle_manoeuvre                        74.5451
+speed_limit                              63.6083
+lsoa_of_accident_location                63.2546
+urban_or_rural_area                      11.4625
+age_of_driver                             2.2778
+junction_detail                           0.3038
+road_type                                 0.0000
+junction_control                          0.0000
+light_conditions                          0.0000
+weather_conditions                        0.0000
+sex_of_driver                             0.0000
+pedestrian_crossing_physical_facilities   0.0000
+junction_location                         0.0000
+
+
+Confusion Matrix and Statistics after threshold adjustment
+
+          Reference
+Prediction Serious Slight
+   Serious    2709   9501
+   Slight     3000  28272
+                                          
+               Accuracy : 0.7125          
+                 95% CI : (0.7082, 0.7168)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1503          
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.4745          
+            Specificity : 0.7485          
+         Pos Pred Value : 0.2219          
+         Neg Pred Value : 0.9041          
+             Prevalence : 0.1313          
+         Detection Rate : 0.0623          
+   Detection Prevalence : 0.2808          
+      Balanced Accuracy : 0.6115          
+                                          
+       'Positive' Class : Serious  
+
+Confusion Matrix and Statistics without threshold adj
+
+          Reference
+Prediction Serious Slight
+   Serious    2212   7076
+   Slight     3497  30697
+                                          
+               Accuracy : 0.7568          
+                 95% CI : (0.7528, 0.7609)
+    No Information Rate : 0.8687          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1581          
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.38746         
+            Specificity : 0.81267         
+         Pos Pred Value : 0.23816         
+         Neg Pred Value : 0.89773         
+             Prevalence : 0.13130         
+         Detection Rate : 0.05087         
+   Detection Prevalence : 0.21361         
+      Balanced Accuracy : 0.60006         
+                                          
+       'Positive' Class : Serious         
+ 
+
+Classification tree:
+rpart(formula = y.train ~ ., data = x.train, method = "class", 
+    parms = list(split = "information"), control = rpart.control(minsplit = 1))
+
+Variables actually used in tree construction:
+[1] lsoa_of_accident_location number_of_vehicles        vehicle_type             
+
+Root node error: 50649/101460 = 0.4992
+
+n= 101460 
+
+        CP nsplit rel error  xerror      xstd
+1 0.177081      0   1.00000 1.00659 0.0031444
+2 0.094375      1   0.82292 0.82416 0.0030947
+3 0.016911      2   0.72854 0.73034 0.0030269
+4 0.014492      4   0.69472 0.69703 0.0029956
+5 0.010000      6   0.66574 0.66803 0.0029650
+
+fit.pruned <- prune(fit,cp=0.016911)
+                                   
