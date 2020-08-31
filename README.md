@@ -1,4 +1,4 @@
-#Academic Projects
+**Academic Projects**
 
 This repository contains my MS academic analytical projects and can be used for MS - academic purpose.
 
